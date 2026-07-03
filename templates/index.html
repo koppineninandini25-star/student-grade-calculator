@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Student Grade Calculator</h1>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form action="/calculate" method="POST">
+
+        <label>Student Name:</label>
+        <input type="text" name="name" placeholder="Enter Student Name" required>
+
+        <label>Maximum Marks per Subject:</label>
+        <input type="number" name="max_marks" placeholder="Enter Maximum Marks" min="1" required>
+
+        <label>Subject 1:</label>
+        <input type="number" name="sub1" placeholder="Enter Subject 1 Marks" min="0" required>
+
+        <label>Subject 2:</label>
+        <input type="number" name="sub2" placeholder="Enter Subject 2 Marks" min="0" required>
+
+        <label>Subject 3:</label>
+        <input type="number" name="sub3" placeholder="Enter Subject 3 Marks" min="0" required>
+
+        <label>Subject 4:</label>
+        <input type="number" name="sub4" placeholder="Enter Subject 4 Marks" min="0" required>
+
+        <label>Subject 5:</label>
+        <input type="number" name="sub5" placeholder="Enter Subject 5 Marks" min="0" required>
+
+        <button type="submit">Calculate</button>
+
+    </form>
+
+    {% if total %}
+    <hr>
+    <div class="result">
+    <h2>Result</h2>
+
+    <p><strong>Name:</strong> {{ name }}</p>
+    <p><strong>Total:</strong> {{ total }}</p>
+    <p><strong>Average:</strong> {{ average }}</p>
+    <p><strong>Percentage:</strong> {{ percentage }}%</p>
+    <p><strong>Grade:</strong> {{ grade }}</p>
+    <p><strong>Status:</strong> {{ status }}</p>
+    <p><strong>Message:</strong> {{ message }}</p>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
