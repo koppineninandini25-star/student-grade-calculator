@@ -1,6 +1,9 @@
 # 🎓 Student Grade Calculator
 
 A simple web application built using **Python (Flask), HTML, and CSS**.
+## Screenshot
+
+![Student Grade Calculator](screenshot.png)
 
 ## Features
 
